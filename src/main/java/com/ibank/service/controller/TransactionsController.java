@@ -23,8 +23,14 @@ public class TransactionsController {
     }
 
     @PostMapping("/deposit")
-    public ResponseEntity<String> deposit(@RequestParam("accountId") int accountId,@RequestParam("amount")int amount){
+    public ResponseEntity<String> deposit(@RequestParam("accountId") int accountId,@RequestParam("amount")Long amount){
         String depositStatus = service.deposit(accountId,amount);
+        return new ResponseEntity<>(depositStatus,HttpStatus.OK);
+    }
+
+    @PostMapping("/withdraw")
+    public ResponseEntity<String> withdraw(@RequestParam("accountId") int accountId,@RequestParam("amount")Long amount){
+        String depositStatus = service.withdraw(accountId,amount);
         return new ResponseEntity<>(depositStatus,HttpStatus.OK);
     }
 }

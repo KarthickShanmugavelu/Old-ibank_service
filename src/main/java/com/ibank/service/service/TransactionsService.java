@@ -17,7 +17,11 @@ public class TransactionsService {
         return dao.getTransactionSummary(id);
     }
 
-    public String deposit(int accountId, int amount) {
-        return dao.deposit(accountId,amount);
+    public String deposit(int accountId, Long amount) {
+        return dao.depositOrWithdraw(accountId,amount,"deposit");
+    }
+
+    public String withdraw(int accountId, Long amount) {
+        return dao.depositOrWithdraw(accountId,amount,"withdraw");
     }
 }
