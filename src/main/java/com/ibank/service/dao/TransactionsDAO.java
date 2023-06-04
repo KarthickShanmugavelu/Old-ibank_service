@@ -76,4 +76,12 @@ public class TransactionsDAO {
         parameterSource.addValue("account_id",accountId);
         namedParameterJdbcTemplate.update(updateBalanceQuery,parameterSource);
     }
+
+    public Map<String, Object> balance(int id) {
+        String getBalanceQuery = IBankUtility.getQueryFromFile("sql/getBalanceQuery.sql");
+        Map<String,Integer> params = new HashMap<>();
+        params.put("account_id",id);
+        Map<String, Object> balance = namedParameterJdbcTemplate.queryForMap(getBalanceQuery, params);
+        return balance;
+    }
 }
