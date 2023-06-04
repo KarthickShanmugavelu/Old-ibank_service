@@ -1,0 +1,1 @@
+SELECT * FROM bank_database.accounts where ACCOUNT_ID=:account_id;

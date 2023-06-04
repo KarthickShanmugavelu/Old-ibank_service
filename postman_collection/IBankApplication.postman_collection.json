@@ -8,15 +8,12 @@
 	"item": [
 		{
 			"name": "AddAccount",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"account_name\": \"Karthick\",\r\n        \"phone\": 12345,\r\n        \"email\": \"karthick@gmail.com\",\r\n        \"status\": \"Active\"\r\n    },\r\n    {\r\n        \"account_name\": \"Naveen\",\r\n        \"phone\": 123456,\r\n        \"email\": \"naveen@gmail.com\",\r\n        \"status\": \"Active\"\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n        \"account_name\": \"Deepak\",\r\n        \"phone\": 12345,\r\n        \"email\": \"deepak@gmail.com\",\r\n        \"status\": \"Active\"\r\n    },\r\n    {\r\n        \"account_name\": \"Aswath\",\r\n        \"phone\": 123456,\r\n        \"email\": \"aswath@gmail.com\",\r\n        \"status\": \"Active\"\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,6 +32,51 @@
 						"v1",
 						"ibank",
 						"addAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ibank/getAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ibank",
+						"getAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccountById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ibank/getAccount/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ibank",
+						"getAccount",
+						"8"
 					]
 				}
 			},
