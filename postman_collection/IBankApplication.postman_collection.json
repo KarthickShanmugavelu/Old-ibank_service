@@ -136,6 +136,262 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "AddBeneficiary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"accountID\": 5,\r\n        \"beneficiaryAccountId\": 12345555,\r\n        \"beneficiaryIfscCode\": \"IFSC12345\",\r\n        \"beneficiaryName\": \"Karthick\",\r\n        \"status\": \"Active\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beneficiary/addBeneficiary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"addBeneficiary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllBeneficiaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beneficiary/getAllBeneficiaries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"getAllBeneficiaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBeneficiaryById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beneficiary/getAllBeneficiaries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"getAllBeneficiaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateBeneficiaryById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountID\": 2,\r\n    \"beneficiaryAccountId\": 75443554,\r\n    \"beneficiaryIfscCode\": \"ISFC0003\",\r\n    \"beneficiaryName\": \"Santhosh\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beneficiary/updateBeneficiary/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"updateBeneficiary",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBeneficiaryById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountID\": 2,\r\n    \"beneficiaryAccountId\": 75443554,\r\n    \"beneficiaryIfscCode\": \"ISFC0003\",\r\n    \"beneficiaryName\": \"Santhosh\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beneficiary/updateBeneficiary/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"updateBeneficiary",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountID\": 2,\r\n    \"beneficiaryAccountId\": 75443554,\r\n    \"beneficiaryIfscCode\": \"ISFC0003\",\r\n    \"beneficiaryName\": \"Santhosh\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transaction/deposit?accountId=8&amount=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "8"
+						},
+						{
+							"key": "amount",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountID\": 2,\r\n    \"beneficiaryAccountId\": 75443554,\r\n    \"beneficiaryIfscCode\": \"ISFC0003\",\r\n    \"beneficiaryName\": \"Santhosh\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transaction/deposit?accountId=8&amount=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "8"
+						},
+						{
+							"key": "amount",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransactionSummary",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountID\": 2,\r\n    \"beneficiaryAccountId\": 75443554,\r\n    \"beneficiaryIfscCode\": \"ISFC0003\",\r\n    \"beneficiaryName\": \"Santhosh\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transaction/getTransactionSummary/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"getTransactionSummary",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
