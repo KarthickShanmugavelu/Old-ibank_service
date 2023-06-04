@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class IbankServiceApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(IbankServiceApplication.class, args);
 	}
 

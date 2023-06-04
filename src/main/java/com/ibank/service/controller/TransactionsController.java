@@ -3,6 +3,7 @@ package com.ibank.service.controller;
 import com.ibank.service.dao.dto.AccountHolderDto;
 import com.ibank.service.service.TransactionsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,6 @@ public class TransactionsController {
     @GetMapping("/addAccount")
     public ResponseEntity<String> addCustomer(@RequestBody List<AccountHolderDto> accountHolderDtoList){
             String insertionStatus= service.insertAccountHolder(accountHolderDtoList);
-            return null;
+            return new ResponseEntity<>(insertionStatus, HttpStatus.OK);
     }
 }
