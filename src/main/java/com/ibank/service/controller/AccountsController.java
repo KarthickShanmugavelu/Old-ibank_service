@@ -5,13 +5,16 @@ import com.ibank.service.service.AccountsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/ibank")
+@Validated
 public class AccountsController {
 
     @Autowired
@@ -30,7 +33,7 @@ public class AccountsController {
     }
 
     @PutMapping("/updateAccount/{id}")
-    public ResponseEntity<String> updateCustomer(@PathVariable("id") int id, @RequestBody AccountHolderDto accountHolderDto){
+    public ResponseEntity<String> updateCustomer(@PathVariable("id") int id, @RequestBody @Valid AccountHolderDto accountHolderDto){
         String updateStatus= service.updateCustomer(id,accountHolderDto);
         return new ResponseEntity<>(updateStatus, HttpStatus.OK);
     }
@@ -40,7 +43,7 @@ public class AccountsController {
         return new ResponseEntity<>(service.deleteAccountById(id), HttpStatus.OK);
     }
     @PostMapping("/addAccount")
-    public ResponseEntity<String> addCustomer(@RequestBody List<AccountHolderDto> accountHolderDtoList){
+    public ResponseEntity<String> addCustomer(@RequestBody @Valid List<AccountHolderDto> accountHolderDtoList){
             String insertionStatus= service.insertAccountHolder(accountHolderDtoList);
             return new ResponseEntity<>(insertionStatus, HttpStatus.OK);
     }

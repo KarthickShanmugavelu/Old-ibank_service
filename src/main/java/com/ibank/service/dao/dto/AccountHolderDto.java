@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -21,7 +22,7 @@ public class AccountHolderDto {
     @Pattern(regexp = "^[A-Za-z]",message = "Name must have only alphabets")
     private String account_name;
 
-    @Pattern(regexp = "^[0-9]+$", message = "Phone number must have only numbers")
+    @Max(20)
     private int phone;
 
     @Pattern(regexp = "^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9-]+)\\.([a-zA-Z]{2,6})$", message = "Kindly enter a valid email id")

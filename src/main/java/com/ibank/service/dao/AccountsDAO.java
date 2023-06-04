@@ -44,18 +44,18 @@ public class AccountsDAO {
     }
 
     public Map<String, Object> getAccountById(int id) {
-        String deleteByIdQuery = IBankUtility.getQueryFromFile("sql/getAccountById.sql");
+        String getByIdQuery = IBankUtility.getQueryFromFile("sql/getAccountById.sql");
         Map<String,Integer> params = new HashMap<>();
         params.put("account_id",id);
-        Map<String, Object> account = namedParameterJdbcTemplate.queryForMap(deleteByIdQuery,params);
+        Map<String, Object> account = namedParameterJdbcTemplate.queryForMap(getByIdQuery,params);
         return account;
     }
 
     public String deleteAccountById(int id) {
-        String getByIdQuery = IBankUtility.getQueryFromFile("sql/deleteAccountById.sql");
+        String deleteByIdQuery = IBankUtility.getQueryFromFile("sql/deleteAccountById.sql");
         Map<String,Integer> params = new HashMap<>();
         params.put("account_id",id);
-        int deleteStatus = namedParameterJdbcTemplate.update(getByIdQuery,params);
+        int deleteStatus = namedParameterJdbcTemplate.update(deleteByIdQuery,params);
         if(deleteStatus==1)
             return "Successfully Deleted";
         else
