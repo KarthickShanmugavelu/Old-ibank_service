@@ -1,0 +1,1 @@
+INSERT INTO `Accounts` VALUES (:account_name,:phone,:email,:status);
