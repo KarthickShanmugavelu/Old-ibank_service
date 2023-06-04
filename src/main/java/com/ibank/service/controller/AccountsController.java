@@ -29,6 +29,16 @@ public class AccountsController {
         return new ResponseEntity<>(account,HttpStatus.OK);
     }
 
+    @PutMapping("/updateAccount/{id}")
+    public ResponseEntity<String> updateCustomer(@PathVariable("id") int id, @RequestBody AccountHolderDto accountHolderDto){
+        String updateStatus= service.updateCustomer(id,accountHolderDto);
+        return new ResponseEntity<>(updateStatus, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteAccount/{id}")
+    public ResponseEntity<String> deleteAccount(@PathVariable("id") int id) {
+        return new ResponseEntity<>(service.deleteAccountById(id), HttpStatus.OK);
+    }
     @PostMapping("/addAccount")
     public ResponseEntity<String> addCustomer(@RequestBody List<AccountHolderDto> accountHolderDtoList){
             String insertionStatus= service.insertAccountHolder(accountHolderDtoList);

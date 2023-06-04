@@ -44,10 +44,36 @@ public class AccountsDAO {
     }
 
     public Map<String, Object> getAccountById(int id) {
-        String getByIdQuery = IBankUtility.getQueryFromFile("sql/getAccountById.sql");
+        String deleteByIdQuery = IBankUtility.getQueryFromFile("sql/getAccountById.sql");
         Map<String,Integer> params = new HashMap<>();
         params.put("account_id",id);
-        Map<String, Object> account = namedParameterJdbcTemplate.queryForMap(getByIdQuery,params);
+        Map<String, Object> account = namedParameterJdbcTemplate.queryForMap(deleteByIdQuery,params);
         return account;
+    }
+
+    public String deleteAccountById(int id) {
+        String getByIdQuery = IBankUtility.getQueryFromFile("sql/deleteAccountById.sql");
+        Map<String,Integer> params = new HashMap<>();
+        params.put("account_id",id);
+        int deleteStatus = namedParameterJdbcTemplate.update(getByIdQuery,params);
+        if(deleteStatus==1)
+            return "Successfully Deleted";
+        else
+            return "No records were Deleted";
+    }
+
+    public String updateCustomer(int id, AccountHolderDto accountHolderDto) {
+        String updateByIdQuery = IBankUtility.getQueryFromFile("sql/updateAccountById.sql");
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("account_name",accountHolderDto.getAccount_name());
+        params.addValue("phone",accountHolderDto.getPhone());
+        params.addValue("email",accountHolderDto.getEmail());
+        params.addValue("status",accountHolderDto.getStatus());
+        params.addValue("id",id);
+        int updateStatus=namedParameterJdbcTemplate.update(updateByIdQuery,params);
+        if(updateStatus==1)
+            return "Update Succes";
+        else
+            return "No rows were updated";
     }
 }

@@ -25,4 +25,12 @@ AccountsDAO accountsDAO;
     public Map<String, Object> getAccountById(int id) {
         return accountsDAO.getAccountById(id);
     }
+
+    public String updateCustomer(int id,AccountHolderDto accountHolderDto) {
+        return accountsDAO.updateCustomer(id,accountHolderDto);
+    }
+
+    public String deleteAccountById(int id) {
+        return accountsDAO.deleteAccountById(id);
+    }
 }
