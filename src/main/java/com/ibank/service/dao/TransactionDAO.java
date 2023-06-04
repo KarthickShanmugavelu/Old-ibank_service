@@ -15,9 +15,6 @@ import java.util.List;
 public class TransactionDAO {
 
     @Autowired
-    AccountHolderDto accountHolderDto;
-
-    @Autowired
     @Qualifier("dbNamedParameterJdbcTemplate")
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
