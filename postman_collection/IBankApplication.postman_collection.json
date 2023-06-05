@@ -39,6 +39,38 @@
 			"response": []
 		},
 		{
+			"name": "CheckingException",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"account_name\": \"Vishnu124\",\r\n        \"phone\": 12345,\r\n        \"email\": \"deepak@gmail.com\",\r\n        \"status\": \"Active\"\r\n    }  \r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ibank-service/api/v1/ibank/addAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ibank-service",
+						"api",
+						"v1",
+						"ibank",
+						"addAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GetAccount",
 			"request": {
 				"method": "GET",

@@ -22,7 +22,6 @@ public class AccountHolderDto {
     @Pattern(regexp = "^[A-Za-z]",message = "Name must have only alphabets")
     private String account_name;
 
-    @Max(20)
     private int phone;
 
     @Pattern(regexp = "^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9-]+)\\.([a-zA-Z]{2,6})$", message = "Kindly enter a valid email id")
